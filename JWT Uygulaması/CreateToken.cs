@@ -10,7 +10,7 @@ namespace JWT_Uygulaması
 {
     public class CreateToken
     {
-        public string TokunOlustur()
+        public string TokenOlustur()
         {
          var bytes =Encoding.UTF8.GetBytes("gulergulerguler1");
             SymmetricSecurityKey key = new SymmetricSecurityKey(bytes);

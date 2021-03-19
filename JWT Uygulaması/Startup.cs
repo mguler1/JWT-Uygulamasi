@@ -50,7 +50,7 @@ namespace JWT_Uygulaması
             }
 
             app.UseRouting();
-
+            app.UseAuthentication();//eklendi
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
