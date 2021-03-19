@@ -35,7 +35,8 @@ namespace JWT_Uygulaması
                     ValidAudience = "http://localhost",//Tokeni kim kullanacak?
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("gulergulerguler1")),//Key değeri
                     ValidateIssuerSigningKey = true,
-                    ValidateLifetime=true
+                    ValidateLifetime=true ,//Token ne zamana kadar geçerli olup olmadığını kontrol eder.
+                    ClockSkew=TimeSpan.Zero //serverlar arası zaman farkına istinaden süreyi değiştrimek için kullanılır
                 };
             });  
         }
