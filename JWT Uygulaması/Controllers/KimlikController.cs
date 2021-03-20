@@ -16,9 +16,21 @@ namespace JWT_Uygulaması.Controllers
         [HttpGet("[action]")]
         public IActionResult GirisYap()
         {
-
             return Created("",new  CreateToken().TokenOlustur());
         }
+        [HttpGet("[action]")]
+        public IActionResult AdminGiris()
+        {
+            return Created("", new CreateToken().TokenAdminRoleOlustur());
+        }
+
+        [Authorize(Roles ="Admin,Member")]
+        [HttpGet("[action]")]
+        public IActionResult AdminSayfasi()
+        {
+            return Ok("Token geçti");
+        }
+
         [Authorize]
         [HttpGet("[action]")]
         public IActionResult Erisim()
