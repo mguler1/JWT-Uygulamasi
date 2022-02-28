@@ -31,6 +31,7 @@ namespace JWT_Uygulaması
                 new Claim(ClaimTypes.NameIdentifier,Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.Role,"Admin"),
                 new Claim(ClaimTypes.Role,"Member"),
+                new Claim(ClaimTypes.Name,""),
             };
             JwtSecurityToken jwtSecurityToken = new JwtSecurityToken(issuer: "http://localhost", audience: "http://localhost", notBefore: DateTime.Now, expires: DateTime.Now.AddMinutes(1), signingCredentials: credentials,claims:claims);
             JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
